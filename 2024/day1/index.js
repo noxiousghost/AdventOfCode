@@ -6,15 +6,15 @@ const rl = readline.createInterface({
   input: input,
 });
 
+const arrLeft = [];
+const arrRight = [];
+
 rl.on("line", (line) => {
   const [value1, value2] = line.trim().split(/\s+/);
   arrLeft.push(parseInt(value1, 10));
   arrRight.push(parseInt(value2, 10));
   return;
 });
-
-const arrLeft = [];
-const arrRight = [];
 
 async function partOne(arrLeft, arrRight) {
   arrLeft.sort((a, b) => {
