@@ -16,7 +16,7 @@ rl.on("line", (line) => {
   return;
 });
 
-async function partOne(arrLeft, arrRight) {
+function partOne(arrLeft, arrRight) {
   arrLeft.sort((a, b) => {
     return a - b;
   });
@@ -30,7 +30,7 @@ async function partOne(arrLeft, arrRight) {
   console.log("Part One: ", totalCount);
 }
 
-async function partTwo(arrLeft, arrRight) {
+function partTwo(arrLeft, arrRight) {
   let totalCount = 0;
   arrLeft.forEach((item) => {
     const numOfOccurrences = arrRight.filter((x) => x === item).length;
