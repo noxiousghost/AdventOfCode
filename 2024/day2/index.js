@@ -41,6 +41,25 @@ function partOne() {
   console.log(safeCount);
 }
 
+function partTwo() {
+  let safeCount = 0;
+  dataArray.forEach((row) => {
+    if (isSafe(row)) {
+      safeCount++;
+      return;
+    }
+    for (let i = 0; i < row.length; i++) {
+      const modifiedRow = [...row.slice(0, i), ...row.slice(i + 1)];
+      if (isSafe(modifiedRow)) {
+        safeCount++;
+        return;
+      }
+    }
+  });
+  console.log(safeCount);
+}
+
 rl.on("close", async () => {
   await partOne();
+  await partTwo();
 });
